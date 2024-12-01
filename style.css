@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-dark-blue: #01164d;
+    --neutral-white: #ffffff;
+    --secondary-navy-blue: #001f3f;
+    --bright-teal: #1abc9c;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+
+header {
+    background-color: var(--primary-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    height: 5rem;
+    box-shadow: 0px 0px 10px #000000;
+    z-index: 100;
+}
+
+header img {
+    height: 3rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--neutral-white);
+    font-family: 'poppins', sans-serif;
+    font-size: 1.1rem;
+    position: relative;
+    font-weight: 550;
+}
+
+nav ul,
+header img {
+    margin: 0 10rem;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 4px;
+    border-radius: 10px;
+    background-color: var(--bright-teal);
+    transition: width 0.3s ease;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* hero-section */
+.hero-section {
+    background:
+        linear-gradient(to left, rgba(5, 1, 63, 0.667), rgba(0, 247, 255, 0.115)),
+        url('img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 115vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-section .bot-img img {
+    height: 70vh;
+
+}
+.hero-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-message h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.2;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #ffffff;
+    font-style: italic;
+}
+.hero-message h1 span {
+    color: var(--bright-teal);
+    text-align: center;
+    font-style: normal;
+}
+.hero-message h2{
+    color: var(--bright-teal);
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'poppins',sans-serif;
+}
+.hero-message a{
+    font-family: 'poppins',sans-serif;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    border: var(--bright-teal) solid 0.5px;
+    padding: 3px 30px;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.hero-message a:hover{
+    background-color: var(--bright-teal);
+    transition: 0.3s ease-in-out;
+}
+.hero-float-img .html-img{
+    position: absolute;
+    right: 22%;
+    bottom: 30%;
+    height: 10rem;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.hero-float-img .js-img{
+    position: absolute;
+    left: 35%;
+    bottom: 30%;
+    animation-name: floating;
+    animation-duration: 2s;
+    height: 10rem;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.hero-float-img .python-img{
+    position: absolute;
+    right: 25%;
+    bottom: 0%;
+    height: 10rem;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.hero-float-img .ai-img{
+    position: absolute;
+    left: 24%;
+    bottom: 10%;
+    animation-name: floating;
+    animation-duration: 2s;
+    height: 10rem;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* hero section end  */
+
+
+/* quote section :start */
+.quote {
+    height: 30vh;
+    background-color: var(--secondary-navy-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote h1 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--neutral-white);
+}
+
+.quote span {
+    color: var(--bright-teal);
+    opacity: 1;
+    animation: fade 4s infinite; 
+    font-style: italic;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 30px;
+}
+
+/* Fade-in and fade-out animation */
+@keyframes fade {
+    0% {
+        opacity: 0; /* Start as invisible */
+    }
+    50% {
+        opacity: 1; /* Full visibility at the middle */
+    }
+    100% {
+        opacity: 0; /* Fade back to invisible */
+    }
+}
+
+@media screen and (min-width: 375px){
+    header{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        height: 3rem;
+    }
+    .logo img{
+        width: 4rem;
+    }
+    nav ul, header img{
+        margin: 0px 30px;
+    }
+    header nav ul{
+        display: none;
+    }
+    .menu-toggle{
+        display: inherit;
+    }
+
+    .hero-section .bot-img img{
+        height: 35vh;
+        width: 35vh;
+    }
+    .hero-section {
+        background:
+            linear-gradient(to left, rgba(5, 1, 63, 0.667), rgba(0, 247, 255, 0.115)),
+            url('img/hero.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 70vh; /* Ensures no extra scroll space */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .hero-float-img{
+        display: none;
+    }
+    .hero-section .bot-img img {
+        max-height: 50vh; /* Limits size for smaller screens */
+        width: auto;
+    }
+    
+    .hero-message h1 {
+        font-size: 2rem; /* Adjust for smaller screens */
+        text-align: center;
+    }
+    
+    .hero-message h2 {
+        font-size: 1rem;
+    }
+    
+    .hero-message a {
+        font-size: 1rem;
+        padding: 2px 20px;
+    }
+    
+    /* Floating Images Animation */
+    .hero-float-img img {
+        height: 1rem; /* Adjust size for mobile */
+        animation-duration: 3s; /* Smoothen animation */
+    }
+    .quote{
+        height: 15vh;
+    }
+    .quote h1{
+        font-size: 1rem;
+    }
+}
